@@ -4,6 +4,7 @@ import com.newboot.core.common.constant.ErrorCodeEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
+import java.io.Serial;
 import java.util.Objects;
 
 /**
@@ -12,7 +13,6 @@ import java.util.Objects;
  */
 @Getter
 public class RestResp<T> {
-
     /**
      * 响应码
      */

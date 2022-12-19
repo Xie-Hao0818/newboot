@@ -14,5 +14,5 @@ public interface UserService {
      * @param userId 用户ID
      * @return 用户信息
      */
-    RestResp<UserInfoRespDto> getUserInfo(Long userId);
+    RestResp<UserInfoRespDto> getUserInfo(Integer userId);
 }

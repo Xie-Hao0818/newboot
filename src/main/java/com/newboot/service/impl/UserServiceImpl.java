@@ -1,9 +1,8 @@
 package com.newboot.service.impl;
 
 import com.newboot.core.common.resp.RestResp;
-import com.newboot.dao.entity.TUser;
-import com.newboot.dao.mapper.TUserMapper;
 import com.newboot.dto.resp.UserInfoRespDto;
+import com.newboot.manage.cache.UserInfoCacheManager;
 import com.newboot.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,17 +15,10 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    private final TUserMapper userMapper;
+    private final UserInfoCacheManager userInfoCacheManager;
 
     @Override
-    public RestResp<UserInfoRespDto> getUserInfo(Long userId) {
-        TUser user = userMapper.selectById(userId);
-        return RestResp.ok(UserInfoRespDto.builder()
-                .occupation(user.getOccupation())
-                .registrationTime(user.getRegistrationTime())
-                .email(user.getEmail())
-                .userName(user.getUserName())
-                .sex(user.getSex())
-                .build());
+    public RestResp<UserInfoRespDto> getUserInfo(Integer userId) {
+        return RestResp.ok(userInfoCacheManager.getUserInfo(userId));
     }
 }

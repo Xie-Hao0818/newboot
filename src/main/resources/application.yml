@@ -1,3 +1,8 @@
+server:
+  port: 8082
+  servlet:
+    encoding:
+      charset: utf-8
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -5,12 +10,20 @@ spring:
     username: root
     password: 08240030xzh.
     type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 08240030xzh.
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 100ms
 
 mybatis-plus:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.newboot.dao.entity
   configuration:
-    # 关闭驼峰映射
     map-underscore-to-camel-case: false
-    # sql日志的打印
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
