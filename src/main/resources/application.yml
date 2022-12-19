@@ -1,8 +1,6 @@
 server:
   port: 8082
-  servlet:
-    encoding:
-      charset: utf-8
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,16 +12,11 @@ spring:
     host: 127.0.0.1
     port: 6379
     password: 08240030xzh.
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: 100ms
+  jackson:
+    generator:
+      write-numbers-as-strings: true
 
 mybatis-plus:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.newboot.dao.entity
   configuration:
     map-underscore-to-camel-case: false
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
