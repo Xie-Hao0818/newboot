@@ -4,11 +4,11 @@ import com.newboot.core.common.constant.ErrorCodeEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 
-import java.io.Serial;
 import java.util.Objects;
 
 /**
  * Http Rest 响应工具及数据格式封装
+ *
  * @param <T>
  */
 @Getter
