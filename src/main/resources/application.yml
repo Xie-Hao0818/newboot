@@ -11,7 +11,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
-    password: 08240030xzh.
+    requirePass: 08240030xzh.
   jackson:
     generator:
       write-numbers-as-strings: true

@@ -26,7 +26,7 @@ public class UserInfoCacheManager {
      * 查询用户信息，并放入缓存中
      */
     @Cacheable(cacheManager = CacheConsts.REDIS_CACHE_MANAGER,
-            value = CacheConsts.USER_INFO_CACHE_NAME)
+            value = CacheConsts.USER_INFO_CACHE_NAME, unless = "#result == null")
     public UserInfoRespDto getUserInfo(Integer userId) {
         TUser user = userInfoMapper.selectById(userId);
         if (Objects.isNull(user)) {
